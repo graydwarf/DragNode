@@ -18,13 +18,12 @@ func _process(_delta):
 	if _isDraggingBlueControl:
 		_blueControl.rect_global_position = globalMousePosition - _localMousePosition
 	if _isDraggingRedControl:
-		_redControl.rect_global_position = globalMousePosition - _localMousePosition
+		_redControl.rect_global_position = globalMousePosition
 	if _isDraggingGreenControl:
 		_greenControl.rect_global_position = globalMousePosition - _localMousePosition
 
 func _on_RedControl_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():
-		#_localMousePosition = _control.get_local_mouse_position()
 		_isDraggingRedControl = true
 	elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT and !event.is_pressed():
 		_isDraggingRedControl = false
